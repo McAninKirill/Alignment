@@ -10,12 +10,12 @@
 \begin{align*}
 \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi_{\theta}(\cdot|x)} \left[ (R(y, x) - b) \nabla_{\theta} \log \pi_{\theta}(y|x) \right]
 \end{align*}
-``` (1)
+(1)``` 
 # Награда модели:
 $R (x, y)$ - это награда модели, которая вычисляется по формуле:
 ```
 R(x, y) = r_{\phi}(x, y) - \beta \log \left( \frac{\pi_{\theta}(y|x)}{\pi_{\mathrm{ref}}(y|x)} \right)
-```(2)
+(2)``` 
 $r_{\phi}(x, y)$ - это обращение к reward моделе, чтобы она оценила, насколько выход из current policy соответствует желанию промпта.
 $\log \left( \frac{\pi_{\theta}(y|x)}{\pi_{\mathrm{ref}}(y|x)} \right)$ - это ничто иное, как KL-дивергенция между current policy и sft.
 $\beta$ - константа для контроля дистанции от current policy
