@@ -6,10 +6,11 @@
 Я обучил reward модель поверх sft, используя библиотеку [trl](https://github.com/huggingface/trl). В tokenizer я ограничил max_length значением 512, потому что у меня не хватает вычислительных мощностей.
 ## REINFORCE
 На данном этапе нужно я реализовал формулу из статьи, чтобы оптимизировать sft модель, для более точного соответствую промпта и ответа:
-
-$\begin{align*}
+$
+\begin{align*}
 \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi_{\theta}(\cdot|x)} \left[ (R(y, x) - b) \nabla_{\theta} \log \pi_{\theta}(y|x) \right]
-\end{align*}$
+\end{align*}
+$
 (1)
 
 # Награда модели:
